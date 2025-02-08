@@ -1,16 +1,17 @@
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 import { mainMenu } from "../../../uilts/consts";
-import Button from "../../../components/button";
 import More from "./more";
-
+import New from "./new";
+import { useAccount } from "../../../store/auth/hooks";
 export default function Menu(){
+    const account= useAccount()
     return(
-        <nav className="mt-0.5 mb-1" >
+        <nav className="mt-0.5 mb-1" key={account} >
          {mainMenu.map((menu,index)=>(
-           <NavLink to={menu.path} className="py-[2px] block group" >
+           <NavLink to={typeof menu.path == 'function' ? menu.path(): menu.path } key={index} className="py-[2px] block group" >
            {({ isActive})=>(
-              <div className={classNames("p-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[#181818]",{
+              <div  className={classNames("p-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[#181818]",{
                 "font-bold":isActive
             })}>
            <div className="w-[26.25px] h-[26.25px] relative">
@@ -37,10 +38,9 @@ export default function Menu(){
         )}
 
         <More/>
-
-      <div className="w-[90%] py-4" >
-      <Button size= 'large'>Gönder</Button>
-      </div>
+         
+         <New/>
+     
         </nav>
         
        

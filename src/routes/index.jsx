@@ -10,6 +10,8 @@ import Bookmarks from "../pages/bookmarks";
 import Jobs from "../pages/jobs";
 import Communities from "../pages/communities";
 import Profile from "../pages/profile/profile";
+import Premium from "../pages/premium";
+import Organizations from "../pages/organizations";
 
 
 const router=createBrowserRouter([
@@ -53,7 +55,7 @@ const router=createBrowserRouter([
          },
          
          {
-            path:'profile',
+            path:':slug',
             element:<Profile/>
          }
          
@@ -63,6 +65,14 @@ const router=createBrowserRouter([
     {
       path:'/jobs',
       element:<Jobs/>
+    },
+    {
+      path:'/premium',
+      element:<Premium/>
+    },
+    {
+      path:'/organizations',
+      element:<Organizations/>
     }
 ])
 export default router
