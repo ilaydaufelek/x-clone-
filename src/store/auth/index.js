@@ -5,7 +5,7 @@ const initialState={
        id:1,
        fullName:'İlayda',
        userName:'ilayda123',
-       avatar:'https://pbs.twimg.com/profile_images/1619801379412873219/sGo2GMQW_400x400.jpg'
+       avatar:'https://i.pinimg.com/736x/96/74/82/967482799284e44173f869568f2bdc92.jpg'
 
     },
     accounts:[
@@ -13,7 +13,7 @@ const initialState={
          id:1,
          fullName:'İlayda',
          userName:'ilayda123',
-         avatar:'https://pbs.twimg.com/profile_images/1619801379412873219/sGo2GMQW_400x400.jpg'
+         avatar:'https://i.pinimg.com/736x/96/74/82/967482799284e44173f869568f2bdc92.jpg'
       },
       {
          id:2,
