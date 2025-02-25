@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 body{
-    @apply bg-black text-[#ddd] antialiased 
+    @apply bg-black text-[#ddd] antialiased  
 
 
 }
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  } 
+  

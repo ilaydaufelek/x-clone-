@@ -92,12 +92,18 @@ export const mainMenu=[
         title:'Grok',
         icon:{
             active:(
-                <svg viewBox="0 0 24 24" width={26.25} height={26.25} className="block" >
-                <path 
-                fill="#e7e9ea"
-                clip-rule="evenodd" d="M4 0C1.79 0 0 1.79 0 4v16c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V4c0-2.21-1.79-4-4-4H4zm5.982 11.941L16.58 2.55h3.82l-8.509 12.109-1.91-2.718zm-6.678-2.71l8.587 12.219h3.816L7.121 9.23H3.304zm3.813 6.786L3.3 21.45h3.819l1.908-2.715-1.91-2.718zm10.155-7.656V21.45H20.4V3.909L17.272 8.36z" fill-rule="evenodd">
-                </path><clipPath id="6-clip0_3304_259">
-                 <path d="M0 0h24v24H0z" fill="#fff"></path></clipPath></svg>  
+                <svg viewBox="0 0 24 24" width={26.25} height={26.25} className="block">
+                <path
+                  fill="#e7e9ea"
+                  clipRule="evenodd"
+                  d="M4 0C1.79 0 0 1.79 0 4v16c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V4c0-2.21-1.79-4-4-4H4zm5.982 11.941L16.58 2.55h3.82l-8.509 12.109-1.91-2.718zm-6.678-2.71l8.587 12.219h3.816L7.121 9.23H3.304zm3.813 6.786L3.3 21.45h3.819l1.908-2.715-1.91-2.718zm10.155-7.656V21.45H20.4V3.909L17.272 8.36z"
+                  fillRule="evenodd"
+                />
+                <clipPath id="6-clip0_3304_259">
+                  <path d="M0 0h24v24H0z" fill="#fff"></path>
+                </clipPath>
+              </svg>
+               
             ),
             pasive:(
                 <svg viewBox="0 0 24 24"  width={26.25} height={26.25} className="block" >
@@ -253,4 +259,47 @@ export const mainMenu=[
        }
 
     
+]
+
+export const topics=[
+    {
+        id:1,
+        title:'',
+        topic:{
+            type:'tag',
+            value:'SelenaGomez'
+            
+        },
+        postCount:30987
+    },
+    {
+        id:2,
+        title:'Türkiye tarihinde gündemde',
+        topic:{
+            type:'query',
+            value: "Fred'e"
+        },
+        postCount:12335
+    },
+    {
+        id:3,
+        title:'Türkiye tarihinde gündemde',
+        topic:{
+            type:'query',
+            value: "Fred'e"
+        },
+        postCount:12335
+    },
+    {
+        id:4,
+        title:'Türkiye tarihinde gündemde',
+        topic:{
+            type:'query',
+            value: "Fred'e"
+        },
+        postCount:12335
+    },
+    
+    
+
 ]
