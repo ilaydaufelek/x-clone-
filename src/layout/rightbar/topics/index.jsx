@@ -8,7 +8,7 @@ export default function Topics(){
 
   const [topicList,setTopicList]=useState(topics)
     return (
-      <SidebarSection 
+      <SidebarSection  
       title="  Neler oluyor?"
       more='/trends'
        >

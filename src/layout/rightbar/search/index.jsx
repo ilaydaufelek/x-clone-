@@ -17,13 +17,13 @@ export default function Search(){
        
           <div
           ref={ref}
-           className="min-h-[32px] h-[50px] mb-3 flex items-center sticky top-0 bg-black z-[10] ">
+           className="min-h-[32px] h-[50px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-[10] ">
          
-          <label className="h-[42px] rounded-full border border-[#333639] w-full  relative group   focus-within:border-[#1d9bf0] focus-within:border-[2px] ">
-           <div className="w-[50px] h-full flex items-center pl-1 absolute top-0 left-0  pointer-events-none ">
+          <label className="h-[42px] rounded-full border border-[color:var(--border-base)] w-full  relative group   focus-within:border-[color:var(--color-primary)] focus-within:border-[2px] ">
+           <div className="w-[50px] h-full flex items-center text-[color:var(--color-baseSecondary)] pl-1 absolute top-0 left-0  pointer-events-none ">
            <svg viewBox="0 0 24 24" 
             height={15.75}
-            fill="#71767b" 
+            fill="currentColor" 
             className="min-w-[32px] " >
 
             <path
@@ -43,10 +43,10 @@ export default function Search(){
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={()=>setQuery('')}
                 onBlur={()=>setFocus(false)}
-                 className="absolute flex mb-[1px] top-1/2 min-w-[22px] -translate-y-1/2 right-3  ">
+                 className="absolute flex mb-[1px] top-1/2 min-w-[22px] -translate-y-1/2 right-3 text-[color:var(--color-base)]  ">
                     <svg viewBox="0 0 24 24" width={21} height={21}>
                     <path
-                    fill="#eff3f4"
+                    fill="currentColor"
                     d="M12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm3.71 12.54l-1.42 1.42-2.29-2.3-2.29 2.3-1.42-1.42 2.3-2.29-2.3-2.29 1.42-1.42 2.29 2.3 2.29-2.3 1.42 1.42-2.3 2.29 2.3 2.29z"/>
                     </svg>
                 </button>
@@ -54,8 +54,8 @@ export default function Search(){
             
             </label>
             { focus && (
-                <div className="absolute top-full -translate-y-1 bg-black shadow-box-shadow w-full max-h-[calc(-50px + 80vh)] rounded-lg text-center min-h-[100px] ">
-              <p className="p-3 pt-5  text-[#71767b] text-[14.5px]  ">
+                <div className="absolute top-full -translate-y-1 bg-[color:var(--background-primary)]  shadow-box w-full max-h-[calc(-50px + 80vh)] rounded-lg text-center min-h-[100px] ">
+              <p className="p-3 pt-5  text-[color:var(--color-baseSecondary)] text-[14.5px]  ">
               Kişileri, listeleri veya anahtar kelimeleri aramayı dene
               </p>
                 </div>

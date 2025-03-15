@@ -55,7 +55,7 @@ export default function ShouldFollow() {
                 <div
                   onMouseEnter={() => handleMouseEnter(user.id)}
                   onMouseLeave={handleMouseLeave}
-                  className="text-[15px] text-[#e7e9ea] font-bold text-left hover:underline flex items-center truncate"
+                  className="text-[0.938rem]  font-bold text-left  hover:underline flex items-center truncate"
                 >
                   {user.fullName}
                   { user.verified && (
@@ -66,7 +66,7 @@ export default function ShouldFollow() {
                 <div
                   onMouseEnter={() => handleMouseEnter(user.id)}
                   onMouseLeave={handleMouseLeave}
-                  className="text-[14px] text-[#71767b] text-left"
+                  className="text-[0.875rem] text-[color:var(--color-baseSecondary)] text-left"
                 >
                   @{user.userName}
                 </div>
@@ -100,7 +100,7 @@ export default function ShouldFollow() {
             onMouseEnter={() => handleMouseEnter(user.id)}
             onMouseLeave={handleMouseLeave}
             className={classNames(
-              "absolute right-36 bottom-full w-[18.75rem] h-[14.64rem] rounded-2xl bg-black text-white shadow-box-shadow z-10",
+              "absolute right-36 bottom-full w-[18.75rem] h-[14.64rem] rounded-2xl bg-[color:var(--background-primary)] shadow-box-shadow z-10",
               {
                 "opacity-100 transition delay-300 duration-300": hoveredId === user.id,
                 "opacity-0 pointer-events-none": hoveredId !== user.id,
@@ -137,20 +137,20 @@ export default function ShouldFollow() {
          )
         }
                 </div>
-                <div className="h-9 w-full text-left py-3 px-4">
-                  <div className="text-[15px] text-[#e7e9ea] font-bold flex items-center">{user.fullName}
+                <div className="h-9 w-full text-left py-3 px-4 ">
+                  <div className="text-[15px]  hover:underline decoration-[color:var(color-base)]  font-bold flex items-center ">{user.fullName}
                     {user.verified && (
                       <Icon/>
                     )}
                   </div>
-                  <div className="text-[14px] text-[#71767b]">@{user.userName}</div>
-                  <div className="mt-3 text-sm text-[#e7e9ea]">{user.info}</div>
+                  <div className="text-[14px] text-[color:var(--color-baseSecondary)]">@{user.userName}</div>
+                  <div className="mt-3 text-sm text-[color:var(--color-base)]">{user.info}</div>
                   <div className="absolute bottom-4 left-4 right-4 flex">
-                    <div className="text-[14px] text-[#71767b] hover:underline decoration-white">
-                      <span className="text-white">{numberFormat(user.followed)}</span> Takip edilen
+                    <div className="text-[14px] text-[color:var(--color-baseSecondary)] hover:underline decoration-[color:var(color-base)]">
+                      <span className="text-[color:var(--color-base)]">{numberFormat(user.followed)}</span> Takip edilen
                     </div>
-                    <div className="text-[14px] ml-3 text-[#71767b] hover:underline decoration-white">
-                      <span className="text-white">{numberFormat(user.follower)}</span> Takipçi
+                    <div className="text-[14px] ml-3 text-[color:var(--color-baseSecondary)] hover:underline decoration-[color:var(color-base)]">
+                      <span className="text-[color:var(--color-base)]">{numberFormat(user.follower)}</span> Takipçi
                     </div>
                   </div>
                 </div>

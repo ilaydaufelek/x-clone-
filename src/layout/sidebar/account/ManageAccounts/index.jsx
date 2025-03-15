@@ -5,7 +5,7 @@ export default function ManageAccounts({close}){
     const accounts= useAccounts()
     const currentAccount=useAccount()
     return(
-        <div>
+        <div className=" " > 
           {accounts.map(account=>(
             <button
             type="button"
@@ -15,15 +15,15 @@ export default function ManageAccounts({close}){
               close()
             }}
            
-             className={classNames("py-3 px-4 flex items-center text-left w-full transition-colors",{
-                "hover:bg-[#181818]":currentAccount.id !== account.id
+             className={classNames("py-3 px-4 flex items-center  text-left w-full transition-colors",{
+                "hover:bg-[color:var(--background-third)]":currentAccount.id !== account.id
             })}>
               
           <img src={account.avatar} alt="" className="rounded-full w-10 h-10" />
         <div>
-        <div className="mx-3 text-[15px]">
-          <h6 className="font-bold leading-[20px]">  {account.fullName}</h6>
-          <div className="text-[#71767b]  ">
+        <div className="mx-3 text-[0.938rem]">
+          <h6 className="font-bold leading-[20px] ">  {account.fullName}</h6>
+          <div className="text-[color:var(--color-baseSecondary)] ">
             @{account.userName}
             </div>
           </div>
@@ -37,14 +37,14 @@ export default function ManageAccounts({close}){
         )}
             </button>
           ))}
-          <div className="h-px bg-[#2f3336] my-3 "/>
-         <button className="py-3 px-4 text-left font-bold hover:bg-[#181818] w-full " >
+          <div className="h-px bg-[color:var(--border-base)] w-full my-3 "/>
+         <button className="py-3 px-4 text-left  font-bold hover:bg-[color:var(--background-third)] w-full " >
          Var olan bir hesap ekle
          </button>
-         <button className="py-3 px-4 text-left font-bold  hover:bg-[#181818] w-full " >
+         <button className="py-3 px-4 text-left font-bold   hover:bg-[color:var(--background-third)] w-full " >
          Hesapları yönet
          </button>
-         <button className="py-3 px-4 text-left font-bold  hover:bg-[#181818] w-full " >
+         <button className="py-3 px-4 text-left  font-bold rounded-b-2xl hover:bg-[color:var(--background-third)] w-full " >
          @llaiseee hesabından çıkış yap
          </button>
         

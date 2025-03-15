@@ -9,17 +9,17 @@ export default function Menu(){
     return(
         <nav className="mt-0.5 mb-1" key={account} >
          {mainMenu.map((menu,index)=>(
-           <NavLink to={typeof menu.path == 'function' ? menu.path(): menu.path } key={index} className="py-[2px] block group" >
+           <NavLink to={typeof menu.path == 'function' ? menu.path(): menu.path } key={index} className="py-[2px] block group text-[color:var(--color-base)] " >
            {({ isActive})=>(
-              <div  className={classNames("p-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[#181818]",{
+              <div  className={classNames("p-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[color:var(--background-third)] ",{
                 "font-bold":isActive
             })}>
            <div className="w-[26.25px] h-[26.25px] relative">
            { menu.notification && 
-            <span className="absolute w-[15px] h-[15px] rounded-full bg-[#1D9BF0] -top-1 -right-1 flex items-center justify-center text-[10px] ">{menu?.notification}</span>
+            <span className="absolute w-[15px] h-[15px] rounded-full bg-[color:var(--color-primary)] -top-1 -right-1 text-[color:var(--color-base)] flex items-center justify-center text-[10px] ">{menu?.notification}</span>
             } 
             {menu.unread && 
-            <span className="absolute w-[6px] h-[6px] rounded-full bg-[#1D9BF0] flex items-center justify-center -top-1 right-px " >{ menu?.unread}</span>
+            <span className="absolute w-[6px] h-[6px] rounded-full bg-[color:var(--color-primary)] flex items-center justify-center -top-1 right-px " >{ menu?.unread}</span>
             }
            {!isActive && menu.icon.pasive}  
             {isActive && menu.icon.active}

@@ -10,23 +10,23 @@ export default function Topic({item,setTopicList, topicList}){
 
     return (
         <Link to='/'
-        className="py-2 px-4 hover:bg-[#080808] transition-colors relative  "
+        className="py-2 px-4 hover:bg-[color:var(--background-fourth)] transition-colors relative  "
         >
-           <div className="text-[12px] text-[#71767b] leading-4 ">
+           <div className="text-[0.75rem] text-[color:var(--color-baseSecondary)] color leading-4 ">
             {item.title}
            </div>
-           <div className="text-[14px] font-bold leading-5  " >
+           <div className="text-[0.875rem] font-bold leading-5   " >
            {item.topic.type == 'tag' && "#"}{item.topic.value}
            </div>
            {item?.postCount && (
-            <div className="text-[12px] text-[#71767b] mt-1 leading-3 ">
+            <div className="text-[0.75rem] text-[color:var(--color-baseSecondary)] mt-1 leading-3 ">
              {numberFormat(item.postCount)} gönderi
             </div>
            )}
            <Popover className="right-3 pb-1 top-0 absolute">
            {({close})=>(
             <>
-             <PopoverButton className="w-[33.5px] h-[33.5px] outline-none text-[#71767b] flex items-center justify-center  hover:bg-[#1d9bf01a] hover:text-[#3093d6] rounded-full z-10 ">
+             <PopoverButton className="w-[33.5px] h-[33.5px] outline-none text-[color:var(--color-baseSecondary)] mt-1 flex items-center justify-center  hover:bg-[#1d9bf01a] hover:text-[#3093d6] rounded-full z-10  transition-colors ">
            
            <svg viewBox="0 0 24 24" width={17.5}>
             <path
@@ -36,7 +36,7 @@ export default function Topic({item,setTopicList, topicList}){
            </svg>
            
             </PopoverButton>
-            <PopoverPanel className="bg-black   w-[348px] grid  shadow-box-shadow absolute top-2 right-0  px-4 py-2  rounded-2xl z-[1] ">
+            <PopoverPanel className="bg-[color:var(--background-primary)]  w-[21.75rem] grid  shadow-box absolute top-2 right-0  px-4 py-2  rounded-2xl z-[1] ">
              <button
              type="button"
              onClick={()=>{
@@ -47,13 +47,13 @@ export default function Topic({item,setTopicList, topicList}){
                 close()
              }}
 
-              className=" w-full h-10 hover:bg-[#0000004d]  py-3  flex items-center " >
+              className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3   flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
-             <p className="px-3  text-sm font-bold text-[#e7e9ea]  ">
+             <p className="px-3  text-sm font-bold  ">
             İlişkili içerik alakalı değil
             </p>
 
@@ -68,10 +68,10 @@ export default function Topic({item,setTopicList, topicList}){
                 close()
              }}
              
-              className=" w-full h-10 hover:bg-[#0000004d] py-3   flex items-center " >
+              className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3   flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
              <p className="px-3  text-sm font-bold  ">
@@ -89,13 +89,13 @@ export default function Topic({item,setTopicList, topicList}){
                  close()
               }}
              
-             className=" w-full h-10 hover:bg-[#0000004d] py-3   flex items-center " >
+             className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3   flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
-             <p className="px-3  text-sm font-bold  text-[#e7e9ea] ">
+             <p className="px-3  text-sm font-bold text-left  text-[color:var(--color-base)] ">
              Bu gündem taciz içeriyor veya zararlı
             </p>
 
@@ -111,13 +111,13 @@ export default function Topic({item,setTopicList, topicList}){
                  close()
               }}
              
-             className=" w-full h-10 hover:bg-[#0000004d] py-3   flex items-center " >
+             className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3   flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
-             <p className="px-3  text-sm font-bold  text-[#e7e9ea] ">
+             <p className="px-3  text-sm font-bold   text-[color:var(--color-base)] ">
              İlgimi çekmiyor
             </p>
 
@@ -132,13 +132,13 @@ export default function Topic({item,setTopicList, topicList}){
                  })
                  close()
               }}
-              className=" w-full h-10 hover:bg-[#0000004d] py-3  flex items-center " >
+              className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3  flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
-             <p className="px-3  text-sm font-bold  text-[#e7e9ea] ">
+             <p className="px-3  text-sm font-bold   text-[color:var(--color-base)] ">
              Bu gündem yineleniyor
             </p>
 
@@ -153,13 +153,13 @@ export default function Topic({item,setTopicList, topicList}){
                  })
                  close()
               }}
-              className=" w-full h-10 hover:bg-[#00000009] py-3   flex items-center " >
+              className=" w-full h-10 hover:bg-[color:var(--background-fourth)] py-3   flex items-center " >
              <svg className="" viewBox="0 0 24 24" width={17.5} height={17.5} >
             <path
-            fill="#e7e9ea"
+            fill="currentColor"
              d="M9.5 7c.828 0 1.5 1.119 1.5 2.5S10.328 12 9.5 12 8 10.881 8 9.5 8.672 7 9.5 7zm5 0c.828 0 1.5 1.119 1.5 2.5s-.672 2.5-1.5 2.5S13 10.881 13 9.5 13.672 7 14.5 7zM12 22.25C6.348 22.25 1.75 17.652 1.75 12S6.348 1.75 12 1.75 22.25 6.348 22.25 12 17.652 22.25 12 22.25zm0-18.5c-4.549 0-8.25 3.701-8.25 8.25s3.701 8.25 8.25 8.25 8.25-3.701 8.25-8.25S16.549 3.75 12 3.75zM8.947 17.322l-1.896-.638C7.101 16.534 8.322 13 12 13s4.898 3.533 4.949 3.684l-1.897.633c-.031-.09-.828-2.316-3.051-2.316s-3.021 2.227-3.053 2.322z"/>
              </svg>
-             <p className="px-3 text-left  text-sm font-bold  text-[#e7e9ea] ">
+             <p className="px-3 text-left  text-sm font-bold   text-[color:var(--color-base)] ">
              Bu gündem başlığı zararlı veya spam içeriyor
             </p>
 

@@ -3,13 +3,20 @@
 @tailwind utilities; 
 
 body{
-    @apply bg-black text-[#ddd] antialiased  
+    @apply bg-[color:var(--background-primary)]  text-[color:var(--color-base)] antialiased  
 
 
+}
+:root{
+  font-size: var(--font-size) ;
 }
 html, body, #root {
     margin: 0;
     padding: 0;
     min-height: 100vh;
   } 
+  .shadow-box{
+    box-shadow: var(--box-shadow);
+
+  }
   
