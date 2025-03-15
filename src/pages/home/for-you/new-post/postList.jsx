@@ -1,18 +1,27 @@
-// components/PostsList.jsx
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { deletePost } from "../../../../store/newPost";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import { useState } from "react";
+import { useEffect } from "react";
 
-export default function PostsList({post}) {
-  const posts = useSelector((state) => state.newPost.posts);
-   const dispatch=useDispatch()
+export default function PostsList({post,postList,setPostList}) {
+ 
+   const [posts,setPosts]=useState([])
+   
+   
+   console.log(posts);
+   
+   useEffect(()=>{
+    const newPost =JSON.parse(localStorage.getItem('posts')) || []
+    setPosts(newPost)
 
+   },[])
    const handleDelete = (postId) => {
-    dispatch(deletePost(postId));
+    setPostList(postList.filter((post) => post.id !== postId));
+   localStorage.setItem('posts',JSON.stringify(deletePost))
+   
+   
   };
   return (
-      posts.map((post)=>(
+      postList.reverse().map((post)=>(
         <div className="px-4 py-3 gap-3 border-b  border-[color:var(--border-base)] flex hover:bg-[color:var(--background-fourth)] transition-colors cursor-pointer"
          key={post.id} >
             <img

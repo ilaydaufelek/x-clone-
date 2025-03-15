@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { posts } from "../../mock/posts";
 import Photo from "./photo";
+import Poll from "./poll";
 
      export default function Post({post,setPost,topicList}){
        
@@ -73,6 +74,7 @@ import Photo from "./photo";
             
                 <div className=" mr-5" dangerouslySetInnerHTML={{__html: post.content.replace(/\n/g, '<br>') }}/>
                {post.type ==='photo' && <Photo photos={post.photos} />}
+               {post.type ==='poll' && <Poll poll={post.poll} /> }
 
                 <div className="flex -ml-1.5 mt-1.5" >
                     <div className="flex-1 group flex items-center  " >

@@ -18,6 +18,7 @@
     "react-dom": "^18.3.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
+    "react-sticky-box": "^2.0.5",
     "react-use": "^17.6.0",
     "redux": "^5.0.1",
     "virtua": "^0.40.3"

@@ -18,7 +18,7 @@ export default function Tab({ children, activeTab }) {
 
     return (
         <TabContext.Provider value={data}>
-            <div className="border-b border-[color:var(--border-base)] sticky top-0 z-10 bg-[color:var(--background-primary)]/90 backdrop-blur-2xl h-[3.313rem] ">
+            <div className="border-b border-[color:var(--border-base)] sticky top-0 z-10 bg-[color:var(--background-primary)] backdrop-blur-2xl h-[3.313rem] ">
                 {items}
             </div>
             {content}

@@ -1,11 +1,50 @@
 export const posts=[
     {
+        id:600944,
+        type:'poll',
+        content:'Bu deneme anketidir',
+        poll: {
+			voted: false,
+			votes: 14,
+			answers: [
+				{
+					id: 1,
+					text: 'Evet',
+					votes: 8
+				},
+				{
+					id: 2,
+					text: 'Hayır',
+					votes: 2
+				},
+				{
+					id: 3,
+					text: 'yani',
+					votes: 4
+				}
+			]
+		},
+        
+   
+        account:{
+            avatar:'https://i.pinimg.com/474x/54/19/4f/54194f1eae734987aab3c5470af30b50.jpg',
+           fullName:'ilayda',
+            userName:'ilayda123'
+        },
+        stats: {
+			comments: 43535,
+			repost: 3434,
+			like: 96946,
+			view: 903453
+		}
+    },
+    {
         id:12627228229,
         type:'photo',
         content:'herkese günaydınn',
         photos:[
-            'https://i.pinimg.com/736x/79/1b/3a/791b3a33b2ce3320ca1817310ad9ae58.jpg',
-            'https://i.pinimg.com/736x/79/1b/3a/791b3a33b2ce3320ca1817310ad9ae58.jpg'
+            'https://pbs.twimg.com/media/GkANvI8WwAA5-p_?format=jpg&name=medium',
+            'https://pbs.twimg.com/media/GjDBRIGWEAAaFg4?format=jpg&name=900x900'
         ],
         account:{
             avatar:'https://i.pinimg.com/474x/54/19/4f/54194f1eae734987aab3c5470af30b50.jpg',
@@ -25,7 +64,7 @@ export const posts=[
         type:'photo',
         content:'Trafikte karşıdan gelen sürücülerin görüşünü olumsuz etkileyen parlak beyaz far kullanımı yasaklandı.',
         photos:[
-            'https://pbs.twimg.com/media/Gl0mmp4W0AAAzWo?format=jpg&name=small'
+            'https://pbs.twimg.com/media/Gl0mmp4W0AAAzWo?format=jpg&name=small',
         ],
         account:{
             avatar:'https://pbs.twimg.com/profile_images/1707827931895017472/1-bUbTT3_400x400.jpg',
@@ -63,11 +102,12 @@ export const posts=[
 
     },
     {
-        id:1229237,
+        id:1237,
         type:'photo',
         content:"Birds of a feather, we should stay together 💞 A binary pair of actively forming stars created this shimmering hourglass of gas and dust. Here, Webb’s ability to see near-infrared light reveals incredible detail and structure in Lynds 483. https://go.nasa.gov/4i4cOBl",
         photos:[
-            'https://pbs.twimg.com/media/GlcmSP2WQAEyEj6?format=jpg&name=small'
+            'https://pbs.twimg.com/media/GlcmSP2WQAEyEj6?format=jpg&name=small',
+            'https://pbs.twimg.com/media/Glr6LUaXgAE_LZ7?format=jpg&name=large'
         ],
         account:{
             avatar: 'https://pbs.twimg.com/profile_images/1767989888916299776/hFYvpxZM_400x400.jpg',

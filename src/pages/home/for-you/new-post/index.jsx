@@ -4,29 +4,28 @@ import Button from "../../../../components/button"
 import { useDispatch } from "react-redux"
 import { addPost } from "../../../../store/newPost"
 
-export default function NewPost (){
-    const account=useAccount()
-    const [focus,setFocus]=useState(false)
-   const dispatch=useDispatch()
-    const [post,setPost]=useState('')
-    
-      
-    const handleSubmit = () => {
-      if (post.trim()) {
-        dispatch(
-          addPost({
-            id: Date.now(),
-            content: post,
-            author: account,
-         
-           
-          })
-        );
-        setPost(""); 
-        setFocus(false);
-        
-      }
-    };
+export default function NewPost ({setPostList}){
+  const account = useAccount();
+  const [focus, setFocus] = useState(false);
+  const [post, setPost] = useState('');
+  const [posts, setPosts] = useState(JSON.parse(localStorage.getItem('posts')) || []);
+
+  const newPost = {
+    id: Date.now(),
+    content: post,
+    author: account,
+  };
+
+  const handleSubmit = () => {
+    const updatedPosts = [...posts, newPost];
+    setPosts(updatedPosts);
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
+    setPost("");
+    setPostList((prevPostList) => [...prevPostList, newPost]);
+    setFocus(false);
+  };
+
+  
   
 
 
@@ -48,7 +47,7 @@ export default function NewPost (){
             <textarea
             onClick={()=>setFocus(true)}
             onChange={(e)=>setPost(e.target.value)}
-              className="resize-none h-14 w-full outline-none placeholder:text-[color:var(--color-baseSecondary)] placeholder:text-[1.25rem] placeholder:mr-1 mt-2 "
+              className="resize-none h-14 w-full outline-none placeholder:text-[color:var(--color-baseSecondary)] bg-[color:var(--background-primary)] placeholder:text-[1.25rem] placeholder:mr-1 mt-2 "
               id="post"
               value={post}
               name="post"
@@ -71,7 +70,7 @@ export default function NewPost (){
                <div className=" py-3 pl-0.5  flex-1 flex gap-1.5 items-center justify-between" >
                 
                 <div className="flex gap-1 " >
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg  className="text-[color:var(--color-primary)] h-[1.25rem]"  viewBox="0 0 24 24" >
                 <path
                 fill="currentColor"
@@ -79,7 +78,7 @@ export default function NewPost (){
                  </svg>
                 </div>
 
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg
                 className="text-[color:var(--color-primary)] h-[1.25rem]" 
                  viewBox="0 0 24 24" >
@@ -89,7 +88,7 @@ export default function NewPost (){
                 </svg>
                 </div>
 
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg
                 className="text-[color:var(--color-primary)] h-[1.25rem]"
                  viewBox="0 0 33 32" >
@@ -98,7 +97,7 @@ export default function NewPost (){
                  d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"/>
                 </svg>
                 </div>
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg
                 className="text-[color:var(--color-primary)] h-[1.25rem]"
                  viewBox="0 0 24 24" >
@@ -107,7 +106,7 @@ export default function NewPost (){
                  d="M6 5c-1.1 0-2 .895-2 2s.9 2 2 2 2-.895 2-2-.9-2-2-2zM2 7c0-2.209 1.79-4 4-4s4 1.791 4 4-1.79 4-4 4-4-1.791-4-4zm20 1H12V6h10v2zM6 15c-1.1 0-2 .895-2 2s.9 2 2 2 2-.895 2-2-.9-2-2-2zm-4 2c0-2.209 1.79-4 4-4s4 1.791 4 4-1.79 4-4 4-4-1.791-4-4zm20 1H12v-2h10v2zM7 7c0 .552-.45 1-1 1s-1-.448-1-1 .45-1 1-1 1 .448 1 1z"/>
                 </svg>
                 </div>
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg
                  className="text-[color:var(--color-primary)] h-[1.25rem]"
                  viewBox="0 0 24 24" >
@@ -117,16 +116,16 @@ export default function NewPost (){
 
                 </svg>
                 </div>
-                <div>
+                <div className="w-8 h-8 rounded-full hover:bg-[color:var(--color-third)] flex items-center justify-center " >
                 <svg
-                className="text-[color:var(--color-primary)] h-[1.25rem]"
+                className="text-[color:var(--color-primary)]   h-[1.25rem]  "
                  viewBox="0 0 24 24" >
                 <path 
                 fill="currentColor"
                  d="M6 3V2h2v1h6V2h2v1h1.5C18.88 3 20 4.119 20 5.5v2h-2v-2c0-.276-.22-.5-.5-.5H16v1h-2V5H8v1H6V5H4.5c-.28 0-.5.224-.5.5v12c0 .276.22.5.5.5h3v2h-3C3.12 20 2 18.881 2 17.5v-12C2 4.119 3.12 3 4.5 3H6zm9.5 8c-2.49 0-4.5 2.015-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.01-4.5-4.5-4.5zM9 15.5C9 11.91 11.91 9 15.5 9s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5S9 19.09 9 15.5zm5.5-2.5h2v2.086l1.71 1.707-1.42 1.414-2.29-2.293V13z"/></svg>
                 </div>
 
-                <div className="text-[color:var(--color-primary)] opacity-50" disabled={true}>
+                <div className="text-[color:var(--color-primary)] opacity-50 w-8 h-8 rounded-full  flex items-center justify-center  " disabled={true}>
                 <svg 
                 className=" h-[1.25rem]"
                  viewBox="0 0 24 24" >

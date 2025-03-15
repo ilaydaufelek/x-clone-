@@ -1,3 +1,4 @@
+import StickyBox from "react-sticky-box";
 import Footer from "./footer";
 import Premium from "./premium";
 import Search from "./search";
@@ -6,12 +7,14 @@ import Topics from "./topics";
 
 export default function RightBar(){
     return(
-        <aside className="w-[350px] mr-2.5 max-h-screen z-[2] min-h-screen flex flex-col sticky top-0   " >
+       <StickyBox className="self-start  "  offsetBottom={80}>
+         <aside className="w-[350px] mr-2.5    " >
            <Search />
            <Premium/>
            <Topics/>
            <ShouldFollow/>
            <Footer/>
         </aside>
+       </StickyBox>
     )
 }
