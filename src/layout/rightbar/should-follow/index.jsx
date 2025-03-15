@@ -100,7 +100,7 @@ export default function ShouldFollow() {
             onMouseEnter={() => handleMouseEnter(user.id)}
             onMouseLeave={handleMouseLeave}
             className={classNames(
-              "absolute right-36 bottom-full w-[18.75rem] h-[14.64rem] rounded-2xl bg-[color:var(--background-primary)] shadow-box-shadow z-10",
+              "absolute right-36 bottom-full w-[18.75rem] h-[14.64rem] rounded-2xl bg-[color:var(--background-primary)] shadow-box z-10",
               {
                 "opacity-100 transition delay-300 duration-300": hoveredId === user.id,
                 "opacity-0 pointer-events-none": hoveredId !== user.id,
