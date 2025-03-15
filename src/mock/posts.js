@@ -44,7 +44,7 @@ export const posts=[
         content:'herkese günaydınn',
         photos:[
             'https://pbs.twimg.com/media/GkANvI8WwAA5-p_?format=jpg&name=medium',
-            'https://pbs.twimg.com/media/GjDBRIGWEAAaFg4?format=jpg&name=900x900'
+            'https://i.pinimg.com/736x/b4/8c/fd/b48cfd5f84af8fb4f79ec4f0e4e5495e.jpg'
         ],
         account:{
             avatar:'https://i.pinimg.com/474x/54/19/4f/54194f1eae734987aab3c5470af30b50.jpg',
