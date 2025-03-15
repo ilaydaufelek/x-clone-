@@ -282,18 +282,18 @@ export const topics=[
         title:'Türkiye tarihinde gündemde',
         topic:{
             type:'query',
-            value: "Fred'e"
+            value: "ösym"
         },
-        postCount:12335
+        postCount:34335
     },
     {
         id:4,
         title:'Türkiye tarihinde gündemde',
         topic:{
             type:'query',
-            value: "Fred'e"
+            value: "Diploma"
         },
-        postCount:12335
+        postCount:48435
     },
     
     
